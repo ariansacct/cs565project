@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <head>
+		
+		<!-- import jQuery -->
+		<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+		
+		<!-- import bootstrap -->
+		<link rel="stylesheet" type="text/css" href="bootstrap.css"/>
+		
+        <style>
+            body { 
+                min-width: 420px; 
+                overflow-x: hidden; 
+                font-family: Arial, sans-serif; 
+                font-size: 12px; 
+            }
+            input, textarea { 
+                width: 420px; 
+            }
+            input#save { 
+                font-weight: bold; width: auto; 
+            }
+        </style>
+        <script src="popup.js"></script>
+    </head>
+    <body>
+        <form id="addbookmark">
+			<p><h2>How are you feeling today?</h2></p>
+			
+			<p>
+				<form>
+				  <input type="radio" name="mood" value="good" checked> Good<br>
+				  <input type="radio" name="mood" value="bad"> Bad<br>
+				</form>
+			</p>
+			
+            <p>
+                <input id="save" type="submit" value="Submit" onclick="myFunction()"/>
+                <span id="status-display"></span>
+            </p>
+			
+			<p>
+			
+				<input type="submit" onclick="location.href='grp13_record.html';" value="Record" />
+                <span id="status-display"></span>
+            </p>
+			
+			
+			<img id="myImage" src="../pics/5.jpg" width="50%" alt="Our uplifting image">
+			</img>
+
+			<script>
+			function myFunction() {
+				var paths = ["../pics/1.jpg", "../pics/2.jpg", "../pics/3.jpg", "../pics/4.jpg", "../pics/5.jpg"
+					, "../pics/6.jpg", "../pics/7.jpg", "../pics/8.jpg", "../pics/9.jpg"];
+				var chosen = paths[Math.floor(Math.random() * paths.length)];
+				$("#myImage").attr("src", chosen);
+			}
+			</script>
+			
+			
+			
+        </form>
+    </body>
+</html>
