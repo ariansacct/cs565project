@@ -1,65 +1,50 @@
 <!DOCTYPE html>
 <html>
-    <head>
-		
-		<!-- import jQuery -->
-		
-		
-		<!-- import bootstrap -->
-		<link rel="stylesheet" type="text/css" href="bootstrap.css"/>
-		
-        <style>
-            body { 
-                min-width: 420px; 
-                overflow-x: hidden; 
-                font-family: Arial, sans-serif; 
-                font-size: 12px; 
-            }
-            input, textarea { 
-                width: 420px; 
-            }
-            input#save { 
-                font-weight: bold; width: auto; 
-            }
-        </style>
-        <script src="popup.js"></script>
-    </head>
-    <body>
-    	<h1>Upliftr</h1>
-    	<ul class="mainList"></ul>
-        <!-- <form id="addbookmark">
 
-			<p><h2>How are you feeling today?</h2></p>
-			
-			<p>
-				<form>
-				  <input type="radio" name="mood" value="good" checked> Good<br>
-				  <input type="radio" name="mood" value="bad"> Bad<br>
-				</form>
-			</p>
-			
-            <p>
-                <input id="save" type="submit" value="Submit" onclick="myFunction()"/>
-                <span id="status-display"></span>
-            </p>
-			
-			<p>
-			
-				<input type="submit" onclick="location.href='grp13_record.html';" value="Record" />
-                <span id="status-display"></span>
-            </p>
-			
-			
-			<img id="myImage" src="../pics/5.jpg" width="50%" alt="Our uplifting image">
-			</img>
+<head>
+    <link rel="stylesheet" type="text/css" href="./code/bootstrap.css" />
+    <style>
+    body {
+        min-width: 420px;
+        overflow-x: hidden;
+        font-family: Arial, sans-serif;
+        font-size: 12px;
+    }
 
-			
-			
-			
-			
-        </form> -->
-        <script src="jquery-3.1.1.min.js"></script>
-    	<script src="./main.js"></script>
-    </body>
+    input,
+    textarea {
+        width: 420px;
+    }
+
+    input#save {
+        font-weight: bold;
+        width: auto;
+    }
+    </style>
+</head>
+
+<body style="height: 500px">
+    <div id="container" style="height: 100%">
+        <div id="header" style="height: 50px; padding-bottom: 5px ">
+            <img src="./assets/upliftrname.png" style="height: 45px;object-fit: contain; display:block; margin:auto;" />
+        </div>
+        <div style="height: 400px">
+            <div id="mainView" style="height: 100%; display: flex; align-items: center;justify-content: center;">
+                <p>The main view</p>
+            </div>
+            <div id="userView" style="display: flex; height: 100%; align-items: center;
+  justify-content: center;">
+                <span id="clicks"></span>
+            </div>
+        </div>
+        <div id="header" style="height: 50px">
+            <input id="mainButton" type="image" src="./assets/logo.png" style="position: absolute; left: 10px; height: 40px; width: auto" />
+            <input id="userButton" type="image" src="./assets/profile_grey.png" style="position: absolute; right: 10px; height: 40px; width: auto" />
+        </div>
+    </div>
+    <!-- Scripts -->
+    <script src="jquery-3.1.1.min.js"></script>
+    <script src="./main.js"></script>
+</body>
 
 </html>

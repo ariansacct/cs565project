@@ -1,37 +1,32 @@
-var interval = null;
-var seconds = null;
-window.onload = function() {
-	interval = setInterval(function() {
-		seconds++;
-	}, 1000);
-};
+var currentActiveTab = '#mainView';
+$('#userView').hide();
 
-window.onbeforeunload = function() {
-	alert('hit');
-	window.localStorage('UpliftrSeconds', seconds);
-	clearInterval()(interval);
-};
+$('#mainButton').click(function() {
+	currentActiveTab = '#mainView';
+	$('#mainButton').attr('src', './assets/logo.png');
+	$('#userButton').attr('src', './assets/profile_grey.png');
+	$('#userView').hide();
+	$('#mainView').show();
+});
 
-$(window).on('beforeunload', function() {});
+$('#userButton').click(function() {
+	currentActiveTab = '#userView';
+	$('#mainButton').attr('src', './assets/lgoo_grey.png');
+	$('#userButton').attr('src', './assets/profile_color.png');
+	$('#userView').show();
+	$('#mainView').hide();
+});
 
-function myFunction() {
-	var paths = [
-		'../pics/1.jpg',
-		'../pics/2.jpg',
-		'../pics/3.jpg',
-		'../pics/4.jpg',
-		'../pics/5.jpg',
-		'../pics/6.jpg',
-		'../pics/7.jpg',
-		'../pics/8.jpg',
-		'../pics/9.jpg',
-	];
-	for (var p of paths) {
-		$('.mainList').append(`<li><img src="${p}" />`);
-		console.log('hit');
+function setGraph() {
+	var dateKey = 'uplifter-' + new Date().toDateString();
+	var dayCount = localStorage.getItem(dateKey);
+	if (!dayCount) {
+		localStorage.setItem(dateKey, 1);
+	} else {
+		localStorage.setItem(dateKey, parseInt(dayCount) + 1);
 	}
-	// var chosen = paths[Math.floor(Math.random() * paths.length)];
-	// $("#myImage").attr("src", chosen);
+
+	$('#clicks').text("You've been here " + dayCount + ' times today!');
 }
 
-myFunction();
+setGraph();
